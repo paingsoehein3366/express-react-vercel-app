@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
     res.send("Server is runing.");
 });
-app.use("/login", (req, res) => {
+app.get("/login", (req, res) => {
     res.send("login");
 })
 
