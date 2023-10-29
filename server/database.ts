@@ -1,13 +1,12 @@
-const { Pool } = require('pg')
-require('dotenv').config()
+import { Pool } from 'pg';
 
-const pool = new Pool({
-    connectionString: process.env.POSTGRES_URL + "?sslmode=require",
-})
-
-pool.connect((err) => {
-    if (err) throw err
-    console.log("Connect to PostgreSQL successfully!")
+export const db = new Pool({
+    host: "dpg-ckv1gh237rbc73e6kkug-a.singapore-postgres.render.com",
+    user: "express_server_user",
+    password: "ouAVUpWziuSiBDgzuQcy9hnCAJtYEUcb",
+    database: "express_server",
+    max: 20,
+    ssl: true,
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 2000,
 });
-
-module.exports = pool
