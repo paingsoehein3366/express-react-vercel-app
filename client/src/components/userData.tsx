@@ -15,7 +15,7 @@ const UserData = () => {
         showDataFunction();
     }, [runFunction])
     const showDataFunction = async () => {
-        const response = await fetch("http://localhost:5000/userData", {
+        const response = await fetch("https://express-react-vercel-app.vercel.app/userData", {
             method: "GET",
             headers: { "content-type": "application/json" }
         });
